@@ -1,9 +1,10 @@
-import "./App.css";
+import "../App.css";
+import Draw from "./Draw";
 
 function App() {
   return (
     <>
-      <div>Hello World</div>
+      <Draw />
     </>
   );
 }
