@@ -8,6 +8,8 @@ export default function Draw() {
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
+    ctx.fillStyle = "beige";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   }, []);
 
   function startDrawing(e) {
@@ -36,8 +38,8 @@ export default function Draw() {
     <canvas
       ref={canvasRef}
       id="canvas"
-      width={1000}
-      height={1000}
+      width={window.innerWidth * 0.8}
+      height={window.innerHeight * 0.8}
       onMouseDown={startDrawing}
       onMouseMove={draw}
       onMouseUp={stopDrawing}
