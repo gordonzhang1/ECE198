@@ -1,3 +1,8 @@
 export default function SubmitNote() {
-  return <button type="submit">Submit</button>;
+  function submitFunction() {}
+  return (
+    <button type="submit" onClick={submitFunction}>
+      Submit
+    </button>
+  );
 }
