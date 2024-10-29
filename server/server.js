@@ -1,27 +1,15 @@
-import express from "express";
-const app = express();
-const PORT = 8080;
+// Imports the Google Cloud client library
+import vision from "@google-cloud/vision";
 
-app.use(express.json());
+// Creates a client
+const client = new vision.ImageAnnotatorClient();
 
-app.get("/tshirt", (req, res) => {
-  res.status(200).send({
-    tshirt: "hi",
-    size: "larger",
-  });
-});
+/**
+ * TODO(developer): Uncomment the following line before running the sample.
+ */
+const fileName = "/Users/gordonzhang/Downloads/APITEST.jpeg";
 
-app.listen(PORT, () => {
-  console.log(`server is running on http://localhost:${PORT}`);
-});
-
-app.post("/tshirt/:id", (req, res) => {
-  const { id } = req.params;
-  const { logo } = req.body;
-  if (!logo) {
-    res.status(418).send({ message: "We need a logo" });
-  }
-  res.send({
-    tshirt: `shirt with your ${logo} and ID of ${id}`,
-  });
-});
+// Read a local image as a text document
+const [result] = await client.documentTextDetection(fileName);
+const fullTextAnnotation = result.fullTextAnnotation;
+console.log(`Full text: ${fullTextAnnotation.text}`);
