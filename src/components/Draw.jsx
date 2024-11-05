@@ -35,15 +35,17 @@ export default function Draw() {
     setIsDrawing(false);
   }
   return (
-    <canvas
-      ref={canvasRef}
-      id="canvas"
-      width={window.innerWidth * 0.8}
-      height={window.innerHeight * 0.8}
-      onMouseDown={startDrawing}
-      onMouseMove={draw}
-      onMouseUp={stopDrawing}
-      onMouseLeave={stopDrawing}
-    ></canvas>
+    <>
+      <canvas
+        ref={canvasRef}
+        id="canvas"
+        width={window.innerWidth * 0.8}
+        height={window.innerHeight * 0.8}
+        onMouseDown={startDrawing}
+        onMouseMove={draw}
+        onMouseUp={stopDrawing}
+        onMouseLeave={stopDrawing}
+      ></canvas>
+    </>
   );
 }
