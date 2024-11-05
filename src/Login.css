@@ -13,3 +13,7 @@
     height: 100%;
   }
 }
+
+.outercontainer-2 {
+  display: flex;
+}
