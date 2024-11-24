@@ -6,6 +6,7 @@ export default function Index() {
   return (
     <>
       <div>
+        <div>hi</div>
         <BrowserRouter>
           <Routes>
             <Route index element={<Login />} />
